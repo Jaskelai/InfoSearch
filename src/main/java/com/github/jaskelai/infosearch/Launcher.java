@@ -6,7 +6,13 @@ public class Launcher {
     public static final String SITE = "https://www.sovsport.ru";
 
     public static void main(String[] args) {
-        Crawler crawler = new Crawler();
-        crawler.crawl();
+       // Задание 1
+//        Crawler crawler = new Crawler();
+//        crawler.crawl();
+        // Задание 2
+//        Tokenizer tokenizer = new Tokenizer();
+//        tokenizer.tokenize();
+        Lemmatizer lemmatizer = new Lemmatizer();
+        lemmatizer.lemmatize();
     }
 }
