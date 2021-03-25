@@ -11,8 +11,17 @@ public class Launcher {
 //        crawler.crawl();
         // Задание 2
 //        Tokenizer tokenizer = new Tokenizer();
-//        tokenizer.tokenize();
-        Lemmatizer lemmatizer = new Lemmatizer();
-        lemmatizer.lemmatize();
+//        tokenizer.tokenize(true);
+//        Lemmatizer lemmatizer = new Lemmatizer();
+//        lemmatizer.lemmatizeSingle();
+        // Задание 3
+//        Tokenizer tokenizer = new Tokenizer();
+//        tokenizer.tokenize(false);
+//        Lemmatizer lemmatizer = new Lemmatizer();
+//        lemmatizer.lemmatizeMultiple();
+//        InvertedIndexer indexer = new InvertedIndexer();
+//        indexer.execute();
+        BooleanSearch booleanSearch = new BooleanSearch();
+        booleanSearch.execute();
     }
 }

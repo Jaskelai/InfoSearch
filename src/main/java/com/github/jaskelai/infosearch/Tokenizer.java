@@ -1,24 +1,27 @@
 package com.github.jaskelai.infosearch;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Tokenizer {
 
-    public void tokenize() {
+    public void tokenize(boolean writeIntoSingleFile) {
         File directory = new File("sites");
         File[] files = directory.listFiles();
         if (files == null) return;
+        int i = 1;
         for (File file : files) {
-            tokenizeAndWriteFile(file);
+            if (writeIntoSingleFile) {
+                tokenizeAndWriteFile(file, true, null);
+            } else {
+                tokenizeAndWriteFile(file, false, i);
+                i++;
+            }
         }
     }
 
-    private void tokenizeAndWriteFile(File source) {
+    private void tokenizeAndWriteFile(File source, boolean needToWriteInSingleFile, Integer index) {
         List<String> tokens = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(source))) {
             String line;
@@ -33,6 +36,10 @@ public class Tokenizer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Utils.writeToFileLineByLine("words/words.txt", tokens);
+        if (needToWriteInSingleFile) {
+            Utils.writeToFileLineByLine("words/words.txt", tokens);
+        } else {
+            Utils.writeToFileLineByLine("words-token/" + index + ".txt", tokens);
+        }
     }
 }
