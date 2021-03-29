@@ -21,7 +21,10 @@ public class Launcher {
 //        lemmatizer.lemmatizeMultiple();
 //        InvertedIndexer indexer = new InvertedIndexer();
 //        indexer.execute();
-        BooleanSearch booleanSearch = new BooleanSearch();
-        booleanSearch.execute();
+//        BooleanSearch booleanSearch = new BooleanSearch();
+//        booleanSearch.execute();
+        // Задание 4
+        TfIdfCounter tfIdfCounter = new TfIdfCounter();
+        tfIdfCounter.countTf();
     }
 }
